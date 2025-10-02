@@ -13,7 +13,6 @@
         --muted:#9fb0c5;       /* slatey */
         --accent:#5cc8ff;      /* professional sky */
         --accent-2:#7aa2ff;    /* indigo-sky */
-        --ring:rgba(124, 202, 255, 0.25);
         --radius:16px;
         --shadow:0 10px 40px rgba(3, 10, 25, 0.45);
         --maxw:960px;
@@ -58,6 +57,16 @@
       }
       .hero-inner{ padding:40px 28px; }
 
+      /* Identity row */
+      .identity{display:flex; align-items:center; gap:16px;}
+      .avatar{
+        width:72px; height:72px; border-radius:50%;
+        object-fit:cover; flex:0 0 auto;
+        box-shadow:0 6px 20px rgba(3,10,25,0.35);
+        border:1px solid rgba(255,255,255,0.14);
+      }
+      @media (min-width:720px){ .avatar{ width:84px; height:84px; } }
+
       h1{
         margin:0 0 10px 0;
         font-size: clamp(28px, 6vw, 48px);
@@ -96,13 +105,12 @@
       .dots{
         position:absolute; inset:0; pointer-events:none; opacity:0.22;
         background-image:
-          radial-gradient(2px 2px at 20% 30%, var(--accent), transparent 60%),
-          radial-gradient(2px 2px at 80% 60%, var(--accent-2), transparent 60%),
-          radial-gradient(2px 2px at 60% 20%, var(--accent), transparent 60%);
+          radial-gradient(2px 2px at 20% 30%, rgba(92,200,255,0.9), transparent 60%),
+          radial-gradient(2px 2px at 80% 60%, rgba(122,162,255,0.9), transparent 60%),
+          radial-gradient(2px 2px at 60% 20%, rgba(92,200,255,0.9), transparent 60%);
         animation:float 16s ease-in-out infinite alternate;
       }
 
-      /* Footer */
       footer{ color:var(--muted); font-size:14px; text-align:center; margin-top:24px; }
 
       /* Keyframes */
@@ -128,8 +136,13 @@
       <section class="hero" aria-label="Introduction">
         <div class="dots" aria-hidden="true"></div>
         <div class="hero-inner">
-          <h1 class="accent-underline">Bea Louella A. Esteban</h1>
-          <p class="subtitle">Santa Maria, City of Santo Tomas, Batangas</p>
+          <div class="identity">
+            <img class="avatar" src="avatar.jpg" alt="Portrait of Bea Louella A. Esteban" onerror="this.style.display='none'">
+            <div>
+              <h1 class="accent-underline">Bea Louella A. Esteban</h1>
+              <p class="subtitle">Santa Maria, City of Santo Tomas, Batangas</p>
+            </div>
+          </div>
         </div>
       </section>
 
