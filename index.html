@@ -416,6 +416,38 @@
         transform: translateY(0);
       }
       
+      /* Dropdown Menu Styles */
+      .dropdown-menu {
+        background: rgba(26, 42, 79, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        padding: 10px 0;
+        margin-top: 10px;
+      }
+      
+      .dropdown-item {
+        color: rgba(255, 255, 255, 0.85);
+        padding: 8px 20px;
+        transition: var(--transition);
+      }
+      
+      .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+      
+      .dropdown-divider {
+        border-color: rgba(255, 255, 255, 0.15);
+        margin: 5px 0;
+      }
+      
+      .dropdown-toggle::after {
+        margin-left: 5px;
+        transition: var(--transition);
+      }
+      
       @media (max-width: 768px) {
         .navbar {
           width: 90%;
@@ -432,6 +464,12 @@
         
         .section-title {
           font-size: 2rem;
+        }
+        
+        .dropdown-menu {
+          background: rgba(26, 42, 79, 0.98);
+          border-radius: 10px;
+          margin-top: 5px;
         }
       }
     </style>
@@ -450,7 +488,16 @@
             <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Portfolio
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#portfolio">Projects</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="activities.html">Activities</a></li>
+              </ul>
+            </li>
             <li class="nav-item ms-2">
               <button id="modeToggle" class="mode-toggle" title="Toggle light/dark mode">
                 🌙
@@ -577,7 +624,7 @@
                 <i class="fab fa-php"></i>
               </div>
               <h4>Backend Development</h4>
-              <p>PHP, Laravel Basics</p>
+              <p>PHP</p>
             </div>
           </div>
           <div class="col-md-4">
@@ -586,7 +633,7 @@
                 <i class="fab fa-figma"></i>
               </div>
               <h4>Design Tools</h4>
-              <p>Figma, Canva, Adobe Creative Suite</p>
+              <p>Figma, Canva</p>
             </div>
           </div>
           <div class="col-md-4">
@@ -639,12 +686,6 @@
                   <span class="badge badge-custom me-2">MySQL</span>
                   <span class="badge badge-custom">Bootstrap</span>
                 </div>
-              </div>
-            </div>
-          </div>
-              </div>
-            </div>
-          </div>
               </div>
             </div>
           </div>
